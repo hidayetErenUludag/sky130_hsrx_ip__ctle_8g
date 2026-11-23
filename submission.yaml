@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2026 Tim Edwards and Simon Dorrer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+#
+# This is the configuration file for your submission.
+# Please edit the fields below to match your project.
+
+project-name: Programmable 8 Gb/s CTLE
+
+# Must be a unique name and must match the top cell inside the GDS and the
+# design file names.
+top-cell: "sky130_hsrx_ip__ctle_8g"
+
+team-members:
+- Withheld for anonymous review  # TODO: add names before the final submission
+
+# small (500um x 200um), tiny (200um x 200um) or large (500um x 415um).
+# Must match the floorplan template this layout was started from.
+slot-size: small
+
+# Number of analog pins actually used, 0-3. IN, OUTP and OUTN use all three.
+analog-pins: 3
+
+short-description: 2-stage digitally programmable CTLE (10-20 dB boost, 8 codes) for chip-to-chip serial links up to 8 Gb/s.
+
+long-description: |
+  A continuous-time linear equalizer (CTLE) for chip-to-chip serial links up
+  to 8 Gb/s (4 GHz Nyquist) in SkyWater SKY130. A 3-bit code sets 8 boost
+  levels covering 10-20 dB of channel loss. Derived from an earlier
+  PCIe 3.0 receiver front-end by the same team.
+
+  Status: proposal stage. Design files will be added once the SKY130
+  Challenge #4 template is published.
+
+  Test access: a single-ended input on a dedicated pad is converted to
+  differential by an on-chip active balun, and 50-ohm source-follower outputs
+  on two dedicated pads allow direct S-parameter and eye measurement.
+
+# These paths are used to verify your
+# submission during the precheck.
+# Wildcards are allowed, but there
+# should only be a single match.
+# This repository *is* the submission macro, so the paths are relative to the
+# repository root rather than to a folder under macros/.
+gds-path: final/gds/*.gds
+lef-path: final/lef/*.lef
+header-path: final/vh/*.vh
